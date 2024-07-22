@@ -2,6 +2,9 @@ package com.study.spring.aop.advice;
 
 import java.lang.reflect.Method;
 
+/**
+ * around 环绕通知,方法执行之前之后都要执行
+ */
 public interface MethodInterceptor extends Advice {
 	/**
 	 * 对方法进行环绕（前置、后置）增强、异常处理增强，方法实现中需调用目标方法。

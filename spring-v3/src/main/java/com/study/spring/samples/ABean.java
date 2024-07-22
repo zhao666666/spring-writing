@@ -6,6 +6,9 @@ public class ABean {
 
 	private CBean cb;
 
+	public ABean() {
+	}
+
 	public ABean(String name, CBean cb) {
 		super();
 		this.name = name;
@@ -25,8 +28,9 @@ public class ABean {
 		this.cb = cb;
 	}
 
-	public void doSomthing() {
+	public String doSomthing() {
 		System.out.println(System.currentTimeMillis() + " " + this.name + " cb.name=" + this.cb.getName());
+		return "!";
 	}
 
 	public void sayHello() {

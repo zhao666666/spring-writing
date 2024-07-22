@@ -1,5 +1,7 @@
 package com.study.spring.aop;
 
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Proxy;
 import java.util.List;
 
 import com.study.spring.aop.advisor.Advisor;
@@ -22,6 +24,10 @@ public class DefaultAopProxyFactory implements AopProxyFactory {
 		// 如何判断？
 		// 这样可以吗：有实现接口就用JDK,没有就用cglib？
 		// 请同学们实现
+		Class<?>[] interfaces = bean.getClass().getInterfaces();
+		if (interfaces != null && interfaces.length >0) {
+			return true;
+		}
 		return false;
 	}
 

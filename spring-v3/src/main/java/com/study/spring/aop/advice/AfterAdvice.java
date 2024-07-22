@@ -2,6 +2,9 @@ package com.study.spring.aop.advice;
 
 import java.lang.reflect.Method;
 
+/**
+ * 最终通知
+ */
 public interface AfterAdvice extends Advice {
 	/**
 	 * 实现该方法，提供后置增强

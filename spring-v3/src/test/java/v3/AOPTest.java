@@ -56,7 +56,7 @@ public class AOPTest {
 		bf.registerBeanDefinition("myAfterReturningAdvice", bd);
 
 		//注册Advisor(通知者/切面）bean
-		//切面1
+		//切面1,前置增强
 		bd = new GenericBeanDefinition();
 		bd.setBeanClass(AspectJPointcutAdvisor.class);
 		args = new ArrayList<>();
@@ -65,7 +65,7 @@ public class AOPTest {
 		bd.setConstructorArgumentValues(args);
 		bf.registerBeanDefinition("aspectJPointcutAdvisor1", bd);
 
-		//切面2
+		//切面2,环绕
 		bd = new GenericBeanDefinition();
 		bd.setBeanClass(AspectJPointcutAdvisor.class);
 		args = new ArrayList<>();
@@ -74,7 +74,7 @@ public class AOPTest {
 		bd.setConstructorArgumentValues(args);
 		bf.registerBeanDefinition("aspectJPointcutAdvisor2", bd);
 
-		//切面3
+		//切面3,后置
 		bd = new GenericBeanDefinition();
 		bd.setBeanClass(AspectJPointcutAdvisor.class);
 		args = new ArrayList<>();
@@ -106,7 +106,7 @@ public class AOPTest {
 		//--- IOC容器准备好了，可以用了，来获取Bean吧！！
 
 		ABean abean = (ABean) bf.getBean("abean");
-
+		System.out.println("--------------------------------");
 		abean.doSomthing();
 		System.out.println("--------------------------------");
 		abean.sayHello();

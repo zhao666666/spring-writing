@@ -35,6 +35,7 @@ public class DefaultBeanFactory implements BeanFactory, BeanDefinitionRegistry, 
     @Override
     public void registerBeanPostProcessor(BeanPostProcessor bpp) {
         this.beanPostProcessors.add(bpp);
+        //反向感知的过程
         if (bpp instanceof BeanFactoryAware) {
             ((BeanFactoryAware) bpp).setBeanFactory(this);
         }

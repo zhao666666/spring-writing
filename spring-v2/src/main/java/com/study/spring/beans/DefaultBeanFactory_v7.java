@@ -264,6 +264,7 @@ public class DefaultBeanFactory_v7 implements BeanFactory, BeanDefinitionRegistr
             instance = this.createInstanceByFactoryBean(bd);
         }
 
+        //解决DI构造循环依赖,创建一个早期的循序依赖对象,需要在属性依赖前后处理
         this.doEarlyExposeBuildingBeans(beanName,instance);
 
         // 给入属性依赖

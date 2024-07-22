@@ -2,6 +2,9 @@ package com.study.spring.aop.advice;
 
 import java.lang.reflect.Method;
 
+/**
+ * 前置通知
+ */
 public interface MethodBeforeAdvice extends Advice {
 
 	/**

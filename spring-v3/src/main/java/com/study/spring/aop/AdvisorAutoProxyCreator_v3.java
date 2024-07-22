@@ -110,6 +110,15 @@ public class AdvisorAutoProxyCreator_v3 implements BeanPostProcessor, BeanFactor
         return false;
     }
 
+    /**
+     * JDK           接口实现
+     * cglib        父子关系
+     * @param bean
+     * @param beanName
+     * @param matchAdvisors
+     * @return
+     * @throws Throwable
+     */
 	private Object createProxy(Object bean, String beanName, List<Advisor> matchAdvisors) throws Throwable {
 		// 通过AopProxyFactory工厂去完成选择、和创建代理对象的工作。
 		return AopProxyFactory.getDefaultAopProxyFactory().createAopProxy(bean, beanName, matchAdvisors, beanFactory)
